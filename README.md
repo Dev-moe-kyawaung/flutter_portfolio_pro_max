@@ -37,7 +37,10 @@ Cyber-neon design with smooth animations, data-driven content, and production-re
 - Responsive design (Mobile/Tablet/Desktop)
 - Myanmar language support (form validation)
 
-
+flutter clean
+flutter pub get
+dart run build_runner build --delete-conflicting-outputs
+flutter build web --release --web-renderer html --tree-shake-icons
 -----
   ---
    #🛠 Setup
