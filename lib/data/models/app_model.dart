@@ -1,3 +1,8 @@
+import 'package:json_annotation/json_annotation.dart';
+
+part 'app_model.g.dart';
+
+@JsonSerializable()
 class AppModel {
   final String name;
   final String subtitle;
@@ -13,23 +18,8 @@ class AppModel {
     this.category = 'App',
   });
 
-  factory AppModel.fromJson(Map<String, dynamic> json) {
-    return AppModel(
-      name: json['name'] as String,
-      subtitle: json['subtitle'] as String,
-      iconUrl: json['iconUrl'] as String?,
-      storeUrl: json['storeUrl'] as String?,
-      category: json['category'] as String? ?? 'App',
-    );
-  }
+  factory AppModel.fromJson(Map<String, dynamic> json) =>
+      _$AppModelFromJson(json);
 
-  Map<String, dynamic> toJson() {
-    return {
-      'name': name,
-      'subtitle': subtitle,
-      'iconUrl': iconUrl,
-      'storeUrl': storeUrl,
-      'category': category,
-    };
-  }
+  Map<String, dynamic> toJson() => _$AppModelToJson(this);
 }
