@@ -1,3 +1,8 @@
+import 'package:json_annotation/json_annotation.dart';
+
+part 'service_model.g.dart';
+
+@JsonSerializable()
 class ServiceModel {
   final String title;
   final String description;
@@ -9,19 +14,8 @@ class ServiceModel {
     required this.icon,
   });
 
-  factory ServiceModel.fromJson(Map<String, dynamic> json) {
-    return ServiceModel(
-      title: json['title'] as String,
-      description: json['description'] as String,
-      icon: json['icon'] as String,
-    );
-  }
+  factory ServiceModel.fromJson(Map<String, dynamic> json) =>
+      _$ServiceModelFromJson(json);
 
-  Map<String, dynamic> toJson() {
-    return {
-      'title': title,
-      'description': description,
-      'icon': icon,
-    };
-  }
+  Map<String, dynamic> toJson() => _$ServiceModelToJson(this);
 }
