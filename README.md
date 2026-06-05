@@ -76,7 +76,7 @@ git add .
 git commit -m "Deploy portfolio"
 git push origin main
 Your portfolio will be live at:
-https://your-username.github.io/flutter_portfolio_pro_max/
+https://Dev-moe-kyawaung.github.io/flutter_portfolio_pro_max/
 Option 2: Firebase Hosting
 firebase login
 firebase init hosting
