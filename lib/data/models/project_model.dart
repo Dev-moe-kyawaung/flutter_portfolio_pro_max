@@ -1,3 +1,8 @@
+import 'package:json_annotation/json_annotation.dart';
+
+part 'project_model.g.dart';
+
+@JsonSerializable()
 class ProjectModel {
   final String title;
   final String description;
@@ -15,25 +20,8 @@ class ProjectModel {
     this.imageUrl,
   });
 
-  factory ProjectModel.fromJson(Map<String, dynamic> json) {
-    return ProjectModel(
-      title: json['title'] as String,
-      description: json['description'] as String,
-      tags: (json['tags'] as List).cast<String>(),
-      demoUrl: json['demoUrl'] as String? ?? '',
-      sourceUrl: json['sourceUrl'] as String? ?? '',
-      imageUrl: json['imageUrl'] as String?,
-    );
-  }
+  factory ProjectModel.fromJson(Map<String, dynamic> json) =>
+      _$ProjectModelFromJson(json);
 
-  Map<String, dynamic> toJson() {
-    return {
-      'title': title,
-      'description': description,
-      'tags': tags,
-      'demoUrl': demoUrl,
-      'sourceUrl': sourceUrl,
-      'imageUrl': imageUrl,
-    };
-  }
+  Map<String, dynamic> toJson() => _$ProjectModelToJson(this);
 }
