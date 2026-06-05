@@ -41,6 +41,7 @@ Cyber-neon design with smooth animations, data-driven content, and production-re
 
 ## 📁 Project Structure
 
+```txt
 flutter_portfolio_pro_max/
 ├─ .github/
 │  └─ workflows/
@@ -79,35 +80,3 @@ flutter_portfolio_pro_max/
 │     ├─ models/                      # Project, Service, App models
 │     └─ data_sources/                # PortfolioDataSource (data)
 └─ pubspec.yaml
-
-🛠 Setup
-Requirements
-Flutter SDK >= 3.4.0
-Dart SDK >= 3.4.0
-Chrome browser (for web testing)
-1. Clone Repository
-git clone https://github.com/Dev-moe-kyawaung/flutter_portfolio_pro_max.git
-cd flutter_portfolio_pro_max
-2. Enable Flutter Web
-flutter config --enable-web
-flutter doctor
-Verify that Chrome and Web dependencies appear in flutter doctor output.
-3. Install Dependencies
-flutter pub get
-4. Generate JSON Models (Optional)
-If you want to use json_serializable for auto-generated fromJson/toJson:
-dart run build_runner build --delete-conflicting-outputs
-5. Run Locally
-flutter run -d chrome
-Or:
-flutter run -d web-server
-🏗 Build
-Standard Web Build
-flutter build web --release
-Optimized Build (Smaller Size)
-flutter build web --release --web-renderer html --tree-shake-icons
-Build with Custom Base-Href (For GitHub Pages)
-flutter build web --release --base-href /your-repo-name/
-🌐 Deploy
-Option 1: GitHub Pages (Recommended — Free Hosting)
-Step 1: Create CI/CD Workflow
