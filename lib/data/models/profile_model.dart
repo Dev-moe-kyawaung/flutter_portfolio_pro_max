@@ -1,3 +1,8 @@
+import 'package:json_annotation/json_annotation.dart';
+
+part 'profile_model.g.dart';
+
+@JsonSerializable()
 class ProfileModel {
   final String name;
   final String role;
@@ -13,13 +18,8 @@ class ProfileModel {
     this.languages = const [],
   });
 
-  factory ProfileModel.fromJson(Map<String, dynamic> json) {
-    return ProfileModel(
-      name: json['name'] as String,
-      role: json['role'] as String,
-      location: json['location'] as String,
-      avatarUrl: json['avatarUrl'] as String?,
-      languages: (json['languages'] as List?)?.cast<String>() ?? const [],
-    );
-  }
+  factory ProfileModel.fromJson(Map<String, dynamic> json) =>
+      _$ProfileModelFromJson(json);
+
+  Map<String, dynamic> toJson() => _$ProfileModelToJson(this);
 }
