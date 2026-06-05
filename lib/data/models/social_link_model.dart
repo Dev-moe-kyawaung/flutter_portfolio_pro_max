@@ -1,3 +1,8 @@
+import 'package:json_annotation/json_annotation.dart';
+
+part 'social_link_model.g.dart';
+
+@JsonSerializable()
 class SocialLinkModel {
   final String label;
   final String url;
@@ -9,19 +14,8 @@ class SocialLinkModel {
     required this.icon,
   });
 
-  factory SocialLinkModel.fromJson(Map<String, dynamic> json) {
-    return SocialLinkModel(
-      label: json['label'] as String,
-      url: json['url'] as String,
-      icon: json['icon'] as String,
-    );
-  }
+  factory SocialLinkModel.fromJson(Map<String, dynamic> json) =>
+      _$SocialLinkModelFromJson(json);
 
-  Map<String, dynamic> toJson() {
-    return {
-      'label': label,
-      'url': url,
-      'icon': icon,
-    };
-  }
+  Map<String, dynamic> toJson() => _$SocialLinkModelToJson(this);
 }
