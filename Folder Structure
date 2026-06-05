@@ -1,0 +1,116 @@
+flutter_portfolio_pro_max/
+├─ .github/
+│  └─ workflows/
+│     └─ deploy_github_pages.yml
+├─ assets/
+│  ├─ images/
+│  ├─ icons/
+│  └─ animations/
+├─ lib/
+│  ├─ main.dart
+│  ├─ app/
+│  │  ├─ app.dart
+│  │  ├─ router/
+│  │  │  └─ app_router.dart
+│  │  ├─ theme/
+│  │  │  ├─ app_theme.dart
+│  │  │  ├─ app_colors.dart
+│  │  │  └─ app_text_styles.dart
+│  │  ├─ di/
+│  │  │  └─ injector.dart
+│  │  └─ localization/
+│  │     └─ app_localizations.dart
+│  ├─ core/
+│  │  ├─ constants/
+│  │  │  ├─ app_assets.dart
+│  │  │  ├─ app_links.dart
+│  │  │  └─ app_strings.dart
+│  │  ├─ helpers/
+│  │  │  ├─ responsive.dart
+│  │  │  ├─ validators.dart
+│  │  │  └─ scroll_helpers.dart
+│  │  ├─ services/
+│  │  │  ├─ launch_service.dart
+│  │  │  ├─ scroll_service.dart
+│  │  │  └─ animation_service.dart
+│  │  ├─ widgets/
+│  │  │  ├─ cyber_frame.dart
+│  │  │  ├─ neon_button.dart
+│  │  │  ├─ glow_card.dart
+│  │  │  ├─ section_title.dart
+│  │  │  ├─ animated_typing_text.dart
+│  │  │  ├─ progress_bar.dart
+│  │  │  ├─ social_icon.dart
+│  │  │  └─ back_to_top_button.dart
+│  │  └─ utils/
+│  │     ├─ extensions.dart
+│  │     └─ debouncer.dart
+│  ├─ features/
+│  │  ├─ shell/
+│  │  │  └─ presentation/
+│  │  │     ├─ pages/
+│  │  │     │  └─ portfolio_shell_page.dart
+│  │  │     └─ widgets/
+│  │  │        ├─ sticky_navbar.dart
+│  │  │        ├─ mobile_drawer.dart
+│  │  │        └─ scroll_progress_glow.dart
+│  │  ├─ hero/
+│  │  │  └─ presentation/
+│  │  │     ├─ pages/
+│  │  │     │  └─ hero_section.dart
+│  │  │     └─ widgets/
+│  │  │        ├─ rotating_avatar_ring.dart
+│  │  │        ├─ gradient_name.dart
+│  │  │        ├─ typing_roles.dart
+│  │  │        ├─ hero_actions.dart
+│  │  │        └─ social_row.dart
+│  │  ├─ about/
+│  │  │  └─ presentation/
+│  │  │     ├─ pages/
+│  │  │     │  └─ about_section.dart
+│  │  │     └─ widgets/
+│  │  │        ├─ stats_counter.dart
+│  │  │        └─ profile_summary_card.dart
+│  │  ├─ skills/
+│  │  │  └─ presentation/
+│  │  │     ├─ pages/
+│  │  │     │  └─ skills_section.dart
+│  │  │     └─ widgets/
+│  │  │        ├─ skill_progress_item.dart
+│  │  │        └─ intersection_animated_list.dart
+│  │  ├─ services/
+│  │  │  └─ presentation/
+│  │  │     ├─ pages/
+│  │  │     │  └─ services_section.dart
+│  │  │     └─ widgets/
+│  │  │        └─ service_card.dart
+│  │  ├─ projects/
+│  │  │  └─ presentation/
+│  │  │     ├─ pages/
+│  │  │     │  └─ projects_section.dart
+│  │  │     └─ widgets/
+│  │  │        ├─ project_card.dart
+│  │  │        └─ project_tag.dart
+│  │  ├─ apps/
+│  │  │  └─ presentation/
+│  │  │     ├─ pages/
+│  │  │     │  └─ apps_section.dart
+│  │  │     └─ widgets/
+│  │  │        └─ app_collection_card.dart
+│  │  └─ contact/
+│  │     └─ presentation/
+│  │        ├─ pages/
+│  │        │  └─ contact_section.dart
+│  │        └─ widgets/
+│  │           ├─ contact_form.dart
+│  │           └─ social_links_grid.dart
+│  └─ data/
+│     ├─ models/
+│     │  ├─ project_model.dart
+│     │  ├─ service_model.dart
+│     │  ├─ app_model.dart
+│     │  ├─ social_link_model.dart
+│     │  └─ profile_model.dart
+│     └─ data_sources/
+│        └─ portfolio_data_source.dart
+└─ pubspec.yaml
