@@ -2,7 +2,8 @@ name: Flutter Web Deploy to GitHub Pages
 
 on:
   push:
-    branches: [ main ]
+    branches:
+      - main
   workflow_dispatch:
 
 permissions:
@@ -18,18 +19,30 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: subosito/flutter-action@v2
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Flutter
+        uses: subosito/flutter-action@v2
         with:
           flutter-version: '3.24.0'
-          channel: 'stable'
+          channel: stable
           cache: true
-      - run: flutter config --enable-web
-      - run: flutter pub get
-      - run: dart run build_runner build --delete-conflicting-outputs
-        if: success()
-      - run: flutter build web --release --web-renderer html --tree-shake-icons
-      - uses: actions/upload-pages-artifact@v3
+
+      - name: Enable Flutter Web
+        run: flutter config --enable-web
+
+      - name: Get packages
+        run: flutter pub get
+
+      - name: Generate JSON files
+        run: dart run build_runner build --delete-conflicting-outputs
+
+      - name: Build web
+        run: flutter build web --release --web-renderer html --tree-shake-icons
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
         with:
           path: build/web
 
@@ -40,4 +53,6 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
-      - uses: actions/deploy-pages@v4
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
