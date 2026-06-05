@@ -45,8 +45,8 @@ flutter build web --release --web-renderer html --tree-shake-icons
   ---
    #🛠 Setup
 Requirements
-Flutter SDK >= 3.4.0
-Dart SDK >= 3.4.0
+Flutter SDK >= 4.0
+Dart SDK >= 4.0
 Chrome browser (for web testing)
 1. Clone Repository
 git clone https://github.com/Dev-moe-kyawaung/flutter_portfolio_pro_max.git
@@ -113,14 +113,6 @@ Built with Flutter, url_launcher, and modern web design patterns.
 ✅ Build: flutter build web --release
 ✅ Deploy: Push to GitHub (GitHub Actions auto-deploys)
 ✅ Visit: https://your-username.github.io/your-repo-name/
-
-***
-
-ဒီ `README.md` ကို repo root directory တွင် `README.md` အဖြစ် save လုပ်ပြီး commit လုပ်လိုက်ရင် portfolio project အတွက် လုပ်ဆောင်ချက်အားလုံး၊ build/deploy လုပ်ပုံ၊ project structure အပြည့်အစုံကို GitHub မှာ public လုပ်လိုက်ရင် ရပါပြီ။
-
-လိုအပ်ရင် `.github/workflows/deploy_github_pages.yml` CI/CD workflow file ကိုလည်း အပေါ်မှာ ပေးထားပြီးသားပါ။
-
-
 
 ## 📁 Project Structure
 
