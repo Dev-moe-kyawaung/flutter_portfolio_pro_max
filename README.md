@@ -41,7 +41,6 @@ Cyber-neon design with smooth animations, data-driven content, and production-re
 
 ## 📁 Project Structure
 
-```txt
 flutter_portfolio_pro_max/
 ├─ .github/
 │  └─ workflows/
@@ -80,6 +79,7 @@ flutter_portfolio_pro_max/
 │     ├─ models/                      # Project, Service, App models
 │     └─ data_sources/                # PortfolioDataSource (data)
 └─ pubspec.yaml
+
 🛠 Setup
 Requirements
 Flutter SDK >= 3.4.0
@@ -97,8 +97,6 @@ flutter pub get
 4. Generate JSON Models (Optional)
 If you want to use json_serializable for auto-generated fromJson/toJson:
 dart run build_runner build --delete-conflicting-outputs
-
-
 5. Run Locally
 flutter run -d chrome
 Or:
@@ -113,92 +111,3 @@ flutter build web --release --base-href /your-repo-name/
 🌐 Deploy
 Option 1: GitHub Pages (Recommended — Free Hosting)
 Step 1: Create CI/CD Workflow
-Create .github/workflows/deploy_github_pages.yml:
-name: Flutter Web Deploy to GitHub Pages
-
-on:
-  push:
-    branches: [ main ]
-  workflow_dispatch:
-
-permissions:
-  contents: read
-  pages: write
-  id-token: write
-
-concurrency:
-  group: "pages"
-  cancel-in-progress: true
-
-jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: subosito/flutter-action@v2
-        with:
-          flutter-version: '3.24.0'
-          channel: 'stable'
-          cache: true
-      - run: flutter config --enable-web
-      - run: flutter pub get
-      - run: dart run build_runner build --delete-conflicting-outputs
-        if: success()
-      - run: flutter build web --release --web-renderer html --tree-shake-icons
-      - uses: actions/upload-pages-artifact@v3
-        with:
-          path: build/web
-
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    steps:
-      - uses: actions/deploy-pages@v4
-Step 2: Enable GitHub Pages
-Go to your repo on GitHub → Settings → Actions → General
-Enable "Read and write permissions"
-Go to Settings → Pages
-Select "GitHub Actions" as source
-Step 3: Deploy
-git add .
-git commit -m "Deploy portfolio"
-git push origin main
-Your portfolio will be live at:
-https://your-username.github.io/flutter_portfolio_pro_max/
-Option 2: Firebase Hosting
-firebase login
-firebase init hosting
-flutter build web --release
-firebase deploy --only hosting
-Option 3: Surge / Netlify (Manual)
-flutter build web --release
-cd build/web
-surge
-Or drag build/web/ into Netlify.
-🧪 Test
-flutter test
-📬 Contact
-Name: မိုးကျော်အောင် · Moe Kyaw Aung
-Role: Senior Android Developer
-Location: Tachileik, Myanmar 🇲🇲 ↔ Bangkok, Thailand 🇹🇭
-Phone: +95 9 889 000 889 / +959 666 000 050
-Social Links
-GitHub: https://github.com/Dev-moe-kyawaung
-LinkedIn: https://www.linkedin.com/in/moe-kyaw-aung-2653093a1
-YouTube: https://www.youtube.com/channel/UCuTXUguZb4xjeL2nX8WJG
-Gravatar: https://gravatar.com/moekyawaung2026
-📄 License
-MIT License
-🙏 Acknowledgments
-Built with Flutter, url_launcher, and modern web design patterns.
-📌 Quick Start Checklist
-✅ Clone repo
-✅ Run flutter pub get
-✅ Run flutter run -d chrome to test locally
-✅ Build: flutter build web --release
-✅ Deploy: Push to GitHub (GitHub Actions auto-deploys)
-✅ Visit: https://your-username.github.io/your-repo-name/
-
