@@ -25,9 +25,14 @@ jobs:
       - name: Setup Flutter
         uses: subosito/flutter-action@v2
         with:
-          flutter-version: '3.24.0'
+          flutter-version: 'stable'
           channel: stable
           cache: true
+
+      - name: Show Flutter & Dart versions
+        run: |
+          flutter --version
+          dart --version
 
       - name: Enable Flutter Web
         run: flutter config --enable-web
