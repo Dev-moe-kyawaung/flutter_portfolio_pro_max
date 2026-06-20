@@ -29,13 +29,13 @@ jobs:
           channel: stable
           cache: true
 
-      - name: Show Flutter & Dart versions
+      - name: Enable Flutter Web
+        run: flutter config --enable-web
+
+      - name: Show Flutter/Dart versions
         run: |
           flutter --version
           dart --version
-
-      - name: Enable Flutter Web
-        run: flutter config --enable-web
 
       - name: Get packages
         run: flutter pub get
